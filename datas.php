@@ -22,24 +22,13 @@ function calculaDias($dataInicial, $dataFinal) {
 	function setDaysData($_data){
 		
 		$countAno    = 0;
-		$anoBissexto = 366;
 		$anoNormal   = 365;
 		$data        = explode("-",$_data);
 		$diasCorridoMeses = 0;
 
 		$dia = $data[2];
 		$mes = $data[1];
-		$ano = $data[0];
-		
-		$diasTotalIntervaloAno = 0;
-
-		for($i = $countAno; $i <= $ano ; $i++){/*Pegando no intervalo de anos a qtd de dias */ 			
-			if(verificaAnoBissexto($i)){
-				$diasTotalIntervaloAno += $anoBissexto;
-			} else {
-				$diasTotalIntervaloAno += $anoNormal; 
-			}
-		}
+		$ano = $data[0];		
 
 		$aMeses = Array(/* Array de meses com qtd de dias */
 			1  => 31,
@@ -59,6 +48,15 @@ function calculaDias($dataInicial, $dataFinal) {
 			$aMeses[2] = $aMeses[2] + 1;/* Seta +1 fevereiro se ano for bissexto. */
 
 		$qtdDiasAno = array_sum($aMeses);/* Soma todos os dias do ano correspondente */	
+
+		$diasTotalIntervaloAno = 0;
+		for($i = $countAno; $i <= $ano ; $i++){/*Pegando no intervalo de anos a qtd de dias */ 			
+			if(verificaAnoBissexto($i)){
+				$diasTotalIntervaloAno += $anoNormal+1;
+			} else {
+				$diasTotalIntervaloAno += $anoNormal; 
+			}
+		}	
 
 		foreach($aMeses as $chave => $tDias){/* Verifica dias corridos através dos meses */
 			if($chave == $mes)
