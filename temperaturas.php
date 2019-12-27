@@ -41,15 +41,11 @@ $resultadoEsperado = 14;
 $resultado = menorTemperatura($temperaturas);
 verificaResultado("01", $resultadoEsperado, $resultado);
 
-echo "<br/>";
-
 /***** Teste 02 *****/
 $temperaturas = array( 27, -8, -12, 9 );
 $resultadoEsperado = -8;
 $resultado = menorTemperatura($temperaturas);
 verificaResultado("02", $resultadoEsperado, $resultado);
-
-echo "<br/>";
 
 /***** Teste 03 *****/
 $temperaturas = array( -6, 14, 42, 6, 25, -18 );
@@ -57,15 +53,11 @@ $resultadoEsperado = 6;
 $resultado = menorTemperatura($temperaturas);
 verificaResultado("03", $resultadoEsperado, $resultado);
 
-echo "<br/>";
-
 // /***** Teste 04 *****/
 $temperaturas = array( 34, 11, 13, -23, -11, 18 );
 $resultadoEsperado = 11;
 $resultado = menorTemperatura($temperaturas);
 verificaResultado("04", $resultadoEsperado, $resultado);
-
-echo "<br/>";
 
 /***** Teste 05 *****/
 $temperaturas = array( 17, 0, 28, -4 );
@@ -73,15 +65,11 @@ $resultadoEsperado = 0;
 $resultado = menorTemperatura($temperaturas);
 verificaResultado("05", $resultadoEsperado, $resultado);
 
-echo "<br/>";
-
 /***** Teste 06 *****/
 $temperaturas = array( -10, 27, 9, -12 );
 $resultadoEsperado = 9;
 $resultado = menorTemperatura($temperaturas);
 verificaResultado("06", $resultadoEsperado, $resultado);
-
-echo "<br/>";
 
 /***** Teste 07 *****/
 $temperaturas = array( -47, -14, -5, -12, -8 );
@@ -89,14 +77,11 @@ $resultadoEsperado = -5;
 $resultado = menorTemperatura($temperaturas);
 verificaResultado("07", $resultadoEsperado, $resultado);
 
-echo "<br/>";
 /***** Teste 08 *****/
 $temperaturas = array( -47, -14, -5, -12, -5 );
 $resultadoEsperado = -5;
 $resultado = menorTemperatura($temperaturas);
 verificaResultado("08", $resultadoEsperado, $resultado);
-
-echo "<br/>";
 
 /***** Teste 09 *****/
 $temperaturas = array( -7, 12, -13, 8 );

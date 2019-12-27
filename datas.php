@@ -16,20 +16,19 @@ function calculaDias($dataInicial, $dataFinal) {
 		- Não e permitido o uso de classes e funcoes de data da linguagem (DateTime, mktime, strtotime, etc).
 	*/
 		$menorAno = current(explode("-",$dataInicial));/* Pega o menor ano entre as datas */
- 
+
 		return setDaysData($dataFinal,$menorAno) - setDaysData($dataInicial,$menorAno);
 	}
 
-	function setDaysData($_data,$_menorAno){
+	function setDaysData($_data,$_menorAno){ /* Função auxiliar */
 		
-		$countAno    = $_menorAno;
-		$anoNormal   = 365;
-		$data        = explode("-",$_data);
+		$countAno         = $_menorAno;
+		$anoNormal        = 365;
+		$data             = explode("-",$_data);
 		$diasCorridoMeses = 0;
-
-		$dia = $data[2];
-		$mes = $data[1];
-		$ano = $data[0];		
+		$dia              = $data[2];
+		$mes              = $data[1];
+		$ano              = $data[0];		
 
 		$aMeses = Array(/* Array de meses com qtd de dias */
 			1  => 31,
@@ -82,7 +81,6 @@ function calculaDias($dataInicial, $dataFinal) {
 	$resultado = calculaDias($dataInicial, $dataFinal);
 	verificaResultado("01", $resultadoEsperado, $resultado);
 
-	echo "<br/>";
 	/***** Teste 02 *****/
 	$dataInicial = "2018-01-01";
 	$dataFinal = "2018-02-01";
@@ -90,7 +88,6 @@ function calculaDias($dataInicial, $dataFinal) {
 	$resultado = calculaDias($dataInicial, $dataFinal);
 	verificaResultado("02", $resultadoEsperado, $resultado);
 
-	echo "<br/>";
 	/***** Teste 03 *****/
 	$dataInicial = "2018-01-01";
 	$dataFinal = "2018-02-02";
@@ -98,7 +95,6 @@ function calculaDias($dataInicial, $dataFinal) {
 	$resultado = calculaDias($dataInicial, $dataFinal);
 	verificaResultado("03", $resultadoEsperado, $resultado);
 
-	echo "<br/>";
 	// **** Teste 04 ****
 	$dataInicial = "2018-01-01";
 	$dataFinal = "2018-02-28";
@@ -106,7 +102,6 @@ function calculaDias($dataInicial, $dataFinal) {
 	$resultado = calculaDias($dataInicial, $dataFinal);
 	verificaResultado("04", $resultadoEsperado, $resultado);
 
-	echo "<br/>";
 	/***** Teste 05 *****/
 	$dataInicial = "2018-01-15";
 	$dataFinal = "2018-03-15";
@@ -114,7 +109,6 @@ function calculaDias($dataInicial, $dataFinal) {
 	$resultado = calculaDias($dataInicial, $dataFinal);
 	verificaResultado("05", $resultadoEsperado, $resultado);
 
-	echo "<br/>";
 	/***** Teste 06 *****/
 	$dataInicial = "2018-01-01";
 	$dataFinal = "2019-01-01";
@@ -122,7 +116,6 @@ function calculaDias($dataInicial, $dataFinal) {
 	$resultado = calculaDias($dataInicial, $dataFinal);
 	verificaResultado("06", $resultadoEsperado, $resultado);
 
-	echo "<br/>";
 	/***** Teste 07 *****/
 	$dataInicial = "2018-01-01";
 	$dataFinal = "2020-01-01";
@@ -130,7 +123,6 @@ function calculaDias($dataInicial, $dataFinal) {
 	$resultado = calculaDias($dataInicial, $dataFinal);
 	verificaResultado("07", $resultadoEsperado, $resultado);
 
-	echo "<br/>";
 	/***** Teste 08 *****/
 	$dataInicial = "2018-12-31";
 	$dataFinal = "2019-01-01";
@@ -138,7 +130,6 @@ function calculaDias($dataInicial, $dataFinal) {
 	$resultado = calculaDias($dataInicial, $dataFinal);
 	verificaResultado("08", $resultadoEsperado, $resultado);
 
-	echo "<br/>";
 	/***** Teste 09 *****/
 	$dataInicial = "2018-05-31";
 	$dataFinal = "2018-06-01";
@@ -146,77 +137,76 @@ function calculaDias($dataInicial, $dataFinal) {
 	$resultado = calculaDias($dataInicial, $dataFinal);
 	verificaResultado("09", $resultadoEsperado, $resultado);
 
-	echo "<br/>";
 	/***** Teste 10 *****/
 	$dataInicial = "2018-05-31";
 	$dataFinal = "2019-06-01";
 	$resultadoEsperado = 366;
 	$resultado = calculaDias($dataInicial, $dataFinal);
 	verificaResultado("10", $resultadoEsperado, $resultado);
-	echo "<br/>";
+
 	/***** Teste 11 *****/
 	$dataInicial = "2016-02-01";
 	$dataFinal = "2016-03-01";
 	$resultadoEsperado = 29;
 	$resultado = calculaDias($dataInicial, $dataFinal);
 	verificaResultado("11", $resultadoEsperado, $resultado);
-	echo "<br/>";
+
 	/***** Teste 12 *****/
 	$dataInicial = "2016-01-01";
 	$dataFinal = "2016-03-01";
 	$resultadoEsperado = 60;
 	$resultado = calculaDias($dataInicial, $dataFinal);
 	verificaResultado("12", $resultadoEsperado, $resultado);
-	echo "<br/>";
+
 	/***** Teste 13 *****/
 	$dataInicial = "1981-09-21";
 	$dataFinal = "2009-02-12";
 	$resultadoEsperado = 10006;
 	$resultado = calculaDias($dataInicial, $dataFinal);
 	verificaResultado("13", $resultadoEsperado, $resultado);
-	echo "<br/>";
+	
 	/***** Teste 14 *****/
 	$dataInicial = "1981-07-31";
 	$dataFinal = "2009-02-12";
 	$resultadoEsperado = 10058;
 	$resultado = calculaDias($dataInicial, $dataFinal);
 	verificaResultado("14", $resultadoEsperado, $resultado);
-	echo "<br/>";
+	
 	/***** Teste 15 *****/
 	$dataInicial = "2004-03-01";
 	$dataFinal = "2009-02-12";
 	$resultadoEsperado = 1809;
 	$resultado = calculaDias($dataInicial, $dataFinal);
 	verificaResultado("15", $resultadoEsperado, $resultado);
-	echo "<br/>";
+
 	/***** Teste 16 *****/
 	$dataInicial = "2004-03-01";
 	$dataFinal = "2009-02-12";
 	$resultadoEsperado = 1809;
 	$resultado = calculaDias($dataInicial, $dataFinal);
 	verificaResultado("16", $resultadoEsperado, $resultado);
-	echo "<br/>";
+
 	/***** Teste 17 *****/
 	$dataInicial = "1900-02-01";
 	$dataFinal = "1900-03-01";
 	$resultadoEsperado = 28;
 	$resultado = calculaDias($dataInicial, $dataFinal);
 	verificaResultado("17", $resultadoEsperado, $resultado);
-	echo "<br/>";
+
 	/***** Teste 18 *****/
 	$dataInicial = "1899-01-01";
 	$dataFinal = "1901-01-01";
 	$resultadoEsperado = 730;
 	$resultado = calculaDias($dataInicial, $dataFinal);
 	verificaResultado("18", $resultadoEsperado, $resultado);
-	echo "<br/>";
+
 	/***** Teste 19 *****/
 	$dataInicial = "2000-02-01";
 	$dataFinal = "2000-03-01";
 	$resultadoEsperado = 29;
 	$resultado = calculaDias($dataInicial, $dataFinal);
 	verificaResultado("19", $resultadoEsperado, $resultado);
-	echo "<br/>";
+
 	/***** Teste 20 *****/
 	$dataInicial = "1999-01-01";
 	$dataFinal = "2001-01-01";
